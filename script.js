@@ -34,7 +34,7 @@
       h = canvas.height = Math.floor(rect.height);
     }
     function init(){
-      var count = 300;
+      var count = 321;
       particles = [];
       for(var i=0;i<count;i++){
         var layer = i%2===0?0.4:1;

@@ -360,9 +360,29 @@ footer {
     overflow: hidden;
 }
 
-.progress-fill {
+/* --------------------------------------
+ * Core Expertise 独立颜色覆盖
+ * -------------------------------------- */
+
+.progress-fill1 {
     height: 100%;
-    background: linear-gradient(90deg, var(--primary-color), #a30000);
+    background: #EF652A;
+    border-right: 0;
+    border-radius: 999px;
+    transition: width 0.6s ease;
+}
+
+.progress-fill2 {
+    height: 100%;
+    background: #F7DF1E;
+    border-right: 0;
+    border-radius: 999px;
+    transition: width 0.6s ease;
+}
+
+.progress-fill3 {
+    height: 100%;
+    background: #1572B6;
     border-right: 0;
     border-radius: 999px;
     transition: width 0.6s ease;
