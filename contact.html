@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Your Name Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="main-content">
+            <header class="fixed-header">
+                <div class="logo">
+                   <a href="index.html" class="logo-link"><img src="logo.png" alt="Logo" style="max-width: 15%;"></a> 
+                </div>
+              <nav>
+                <ul>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="projects.html" class="nav-link">Projects</a></li>
+                    <li><a href="contact.html" class="nav-link active">Contact</a></li>
+		    <style>a{TEXT-DECORATION:none}</style>
+                </ul>
+              </nav>
+            </header>
+     </div>
+
+    <main class="container">
+        <section class="section">
+            <h1 class="page-title">Contact</h1>
+            <p class="page-intro">Let’s build something great together. Send a message and I’ll get back soon.</p>
+        </section>
+
+        <section class="section">
+            <form class="contact-form" action="#" method="post">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-top:1rem;">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Tell me about your project" required></textarea>
+                </div>
+
+                <input type="submit" value="Send Message">
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© Genm Lau 2025</p>
+    </footer>
+</body>
+</html>

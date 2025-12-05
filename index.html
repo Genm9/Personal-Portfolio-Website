@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Personal Portfolio Website</title>
+    <link rel="icon" href="logo.png">
+    <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+    <div id="preloader" class="preloader-active">
+            <img 
+                src="logo.png" 
+                alt="Logo" 
+                class="preloader-logo"
+            >
+    </div>
+
+    <div id="main-content">
+            <header class="fixed-header">
+                <div class="logo">
+                   <a href="index.html" class="logo-link"><img src="logo.png" alt="Logo" style="max-width: 15%;"></a> 
+                </div>
+              <nav>
+                <ul>
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="projects.html" class="nav-link">Projects</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+		    <style>a{TEXT-DECORATION:none}</style>
+                </ul>
+              </nav>
+            </header>
+     </div>
+
+     <main>
+        <section class="hero-section full-screen-bg">
+            <div class="hero-content">
+                <h1 class="fade-in-up" style="color: yellow;">Personal Portfolio Website</h1>
+                <p class="fade-in-up delay-1">Crafting the future with every line of code.</p>
+                <a href="projects.html" class="explore-btn fade-in-up delay-2">Explore My Project →</a>
+            </div>
+
+            <canvas id="hero-particles" class="hero-canvas" aria-hidden="true"></canvas>
+
+            <div class="scroll-arrow-container">
+                <a href="#info" aria-label="Scroll Down">
+                    <span class="scroll-arrow"></span> 
+                </a>
+            </div>
+        </section>
+        <section class="info-section" id="info">
+            <div class="container">
+                <div class="info-grid">
+                    <div class="info-box fade-in-up">
+                        <h2 class="section-title">Brief Introduction</h2>
+                        <p class="page-intro">Hi, I’m Lau Li Ken.<br><br>I’m a tech enthusiast currently learning 			software development, web technologies, and mobile app design.<br><br>I enjoy creating clean, 			simple, and meaningful digital experiences.</p>
+                    </div>
+                    <div class="info-box fade-in-up">
+                        <h2 class="section-title">Overview</h2>
+                        <p class="page-intro">This portfolio highlights:<br><br>· About Me — My background, 				education, skills, and interests<br>· Projects — A selection of the work I’ve developed<br>· 			Contact — Ways to reach me for collaboration or questions<br><br>I’m always improving my 			skills and exploring new technologies, so this portfolio will continue to grow.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="secondary-content" id="secondary-content-start">
+            <h2 class="section-title">Core Expertise</h2>
+            <p>I focus more on building high-performance websites using HTML5's semantic structure and CSS3's 		    responsive design (RWD).</p>
+            <div class="container">
+              <div class="progress-list">
+                <div class="progress-item">
+                    <div class="progress-meta"><span>HTML</span><span class="progress-value">90%</span></div>
+                    <div class="progress-track"><div class="progress-fill" style="width:90%"></div></div>
+                </div>
+                <div class="progress-item">
+                    <div class="progress-meta"><span>CSS</span><span class="progress-value">85%</span></div>
+                    <div class="progress-track"><div class="progress-fill" style="width:85%"></div></div>
+                </div>
+                <div class="progress-item">
+                    <div class="progress-meta"><span>JavaScript</span><span class="progress-value">50%</span></div>
+                    <div class="progress-track"><div class="progress-fill" style="width:50%"></div></div>
+                </div>
+              <div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© Genm Lau 2025</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+  </html>
