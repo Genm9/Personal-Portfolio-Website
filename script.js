@@ -22,7 +22,7 @@
     if(href === path) a.classList.add('active');
   });
 
-  var section = document.querySelector('.hero-section');
+  var section = document.querySelector('.hero-section') || document.querySelector('.pro-hero');
   var canvas = document.getElementById('hero-particles');
   if(section && canvas){
     var ctx = canvas.getContext('2d');
@@ -159,6 +159,35 @@
       tpx = 0; tpy = 0;
     });
   }
+  var contactForm = document.querySelector('.contact-form');
+  if(contactForm){
+    var success = document.getElementById('contact-success');
+    contactForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      var name = contactForm.querySelector('#name');
+      var email = contactForm.querySelector('#email');
+      var message = contactForm.querySelector('#message');
+      var ok = name && email && message && name.value.trim() && email.value.trim() && message.value.trim();
+      if(success){
+        success.style.display = 'block';
+        success.style.animation = 'fadeInUp 0.5s ease-out';
+        success.textContent = ok ? 'Message sent – I will reply soon.' : 'Please fill in all fields.';
+        success.style.color = ok ? '#9f9' : '#f88';
+      }
+      if(ok){ contactForm.reset(); }
+    });
+  }
+  var galleries = document.querySelectorAll('.shots-scroller');
+  galleries.forEach(function(scroller){
+    var parent = scroller.parentElement;
+    var prev = parent.querySelector('.shots-prev');
+    var next = parent.querySelector('.shots-next');
+    var img = scroller.querySelector('.shots-img');
+    var step = (img ? img.clientWidth : 360) + 16;
+    function go(dir){ scroller.scrollBy({left: dir*step, behavior: 'smooth'}); }
+    if(prev){ prev.addEventListener('click', function(e){ e.preventDefault(); go(-1); }); }
+    if(next){ next.addEventListener('click', function(e){ e.preventDefault(); go(1); }); }
+  });
   }
   if(document.readyState !== 'loading') start(); else document.addEventListener('DOMContentLoaded', start);
 })();

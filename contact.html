@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Your Name Portfolio</title>
+    <title>Contact | Personal Portfolio Website</title>
+    <link rel="icon" href="pictures/logo.png">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
     <div id="main-content">
             <header class="fixed-header">
                 <div class="logo">
-                   <a href="index.html" class="logo-link"><img src="logo.png" alt="Logo" style="max-width: 15%;"></a> 
+                   <a href="index.html" class="logo-link"><img src="pictures/logo.png" alt="Logo" style="max-width: 15%;"></a> 
                 </div>
               <nav>
                 <ul>
@@ -26,36 +28,55 @@
      </div>
 
     <main class="container">
-        <section class="section">
+        <section class="section fade-in-up">
             <h1 class="page-title">Contact</h1>
-            <p class="page-intro">Let’s build something great together. Send a message and I’ll get back soon.</p>
+            <p class="page-intro">Have a question or want to work together on a project? I’d love to hear from you. Send me a message and I’ll get back to you as soon as I can!</p>
         </section>
 
         <section class="section">
-            <form class="contact-form" action="#" method="post">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" placeholder="Your name" required>
+            <div class="info-grid">
+                <div class="info-box fade-in-up delay-1">
+                    <h3>Get In Touch</h3>
+                    <p style="margin-top:6px; color:#cfcfcf;">I’m always happy to connect, work on projects, or explore new opportunities to learn and grow.</p>
+                    <div style="margin-top:10px; display:grid; gap:8px;">
+                        <div><i class="fas fa-envelope" style="color:var(--primary-color);"></i> <span style="margin-left:8px;">genmlau369@gmail.com</span></div>
+                        <div><i class="fas fa-phone" style="color:var(--primary-color);"></i> <span style="margin-left:8px;">+60 17-762 2502</span></div>
+                        <div><i class="fas fa-location-dot" style="color:var(--primary-color);"></i> <span style="margin-left:8px;">Southern University College</span></div><br>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                    <div class="social-links">
+                        <a href="https://github.com/Genm9" aria-label="GitHub">GitHub <i class="fab fa-github"></i></a><br>
+                        <a href="#" aria-label="LinkedIn">LinkedIn <i class="fab fa-linkedin"></i></a><br>
+                        <a href="#" aria-label="Instagram">Instagram <i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
 
-                <div class="form-group" style="margin-top:1rem;">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" placeholder="Tell me about your project" required></textarea>
-                </div>
+                <form class="contact-form fade-in-up delay-2" action="#" method="post">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                        </div>
+                    </div>
 
-                <input type="submit" value="Send Message">
-            </form>
+                    <div class="form-group" style="margin-top:1rem;">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Tell me about your project" required></textarea>
+                    </div>
+
+                    <input type="submit" value="Send Message">
+                    <div id="contact-success" class="success-message"></div>
+                </form>
+            </div>
         </section>
     </main>
 
     <footer>
         <p>© Genm Lau 2025</p>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>

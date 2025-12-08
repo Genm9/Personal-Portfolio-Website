@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects | Your Name Portfolio</title>
+    <title>Projects | Personal Portfolio Website</title>
+    <link rel="icon" href="pictures/logo.png">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
     <div id="main-content">
             <header class="fixed-header">
                 <div class="logo">
-                   <a href="index.html" class="logo-link"><img src="logo.png" alt="Logo" style="max-width: 15%;"></a> 
+                   <a href="index.html" class="logo-link"><img src="pictures/logo.png" alt="Logo" style="max-width: 15%;"></a> 
                 </div>
               <nav>
                 <ul>
@@ -26,42 +28,33 @@
      </div>
 
     <main class="container">
-        <section class="section">
+        <section class="section fade-in-up">
             <h1 class="page-title">Projects</h1>
-            <p class="page-intro">A selection of recent work. Each project emphasizes clarity, speed, and delightful details.</p>
+            <p class="page-intro">Two featured works: a website project and a picture project. Images below show each project.</p>
         </section>
 
         <section class="section grid">
-            <article class="card">
-                <h3>Portfolio Website</h3>
-                <p>Responsive personal site with animated hero, accessible navigation, and modular styles.</p>
+            <article class="card fade-in-up delay-1">
+                <img src="pictures/website_picture_1.png" alt="Website project preview" class="project-thumb" loading="lazy">
+                <h3>Website Project <br><p style="color: yellow;">[ Legend Card Hub ]</p></h3>
+                <p>Responsive platform designed for card collectors, featuring clear market navigation, fast performance, and smooth trading interactions.</p>
                 <div class="skills">
                     <span class="tag">HTML</span>
                     <span class="tag">CSS</span>
-                    <span class="tag">Animations</span>
-                </div>
-                <p style="margin-top:0.75rem;"><a class="btn" href="index.html">View</a></p>
-            </article>
-
-            <article class="card">
-                <h3>Interactive UI Components</h3>
-                <p>Reusable UI patterns built for speed and accessibility, including forms and grids.</p>
-                <div class="skills">
                     <span class="tag">JavaScript</span>
-                    <span class="tag">Accessibility</span>
-                    <span class="tag">Responsive</span>
                 </div>
-                <p style="margin-top:0.75rem;"><a class="btn" href="#">Demo</a></p>
+                <p style="margin-top:0.75rem;"><a class="btn" href="project-website.html">View</a></p>
             </article>
 
-            <article class="card">
-                <h3>Performance Toolkit</h3>
-                <p>Techniques to reduce layout shifts and improve time-to-interactive for modern sites.</p>
+            <article class="card fade-in-up delay-2">
+                <img src="pictures/HSR ABC 横版.jpg" alt="Picture project preview" class="project-thumb" loading="lazy">
+                <h3>Picture Project <br><p style="color: yellow;">[ HSR x Saber Alphabet ]</p></h3>
+                <p>A creative mashup of Honkai: Star Rail heroes and Kamen Rider Saber Alphabet designs, forming a colorful and iconic character display.</p>
                 <div class="skills">
-                    <span class="tag">Performance</span>
-                    <span class="tag">Best Practices</span>
+                    <span class="tag">Image</span>
+                    <span class="tag">Design</span>
                 </div>
-                <p style="margin-top:0.75rem;"><a class="btn" href="#">Read</a></p>
+                <p style="margin-top:0.75rem;"><a class="btn" href="project-picture.html">View</a></p>
             </article>
         </section>
     </main>
@@ -69,5 +62,6 @@
     <footer>
         <p>© Genm Lau 2025</p>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>

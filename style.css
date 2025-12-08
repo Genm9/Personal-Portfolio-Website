@@ -211,12 +211,12 @@ nav ul {
 .section-title {
     font-size: 2.5rem;
     color: var(--primary-color);
-    margin-bottom: 1rem;
+    margin-bottom: 0rem;
 }
 
 .section-image {
-    max-width: 80%;
-    margin-top: 2rem;
+    max-width: 100%;
+    margin-top: 0rem;
     height: auto;
     opacity: 0.8;
 }
@@ -246,15 +246,29 @@ footer {
 }
 
 .page-title {
-    font-size: 2.8rem;
+    font-size: 3.0rem;
     color: var(--primary-color);
     text-align: center;
-    margin-bottom: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 0rem;
+}
+
+.page-subtitle {
+    font-size: 2.0rem;
+    text-align: center;
+    margin-bottom: 0rem;
 }
 
 .page-intro {
+    text-align: center;
+    max-width: 1200px;
+    margin: 0.5rem auto 2rem;
+    color: #ddd;
+}
+
+.home-intro {
     text-align: justify;
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0.5rem auto 2rem;
     color: #ddd;
 }
@@ -286,6 +300,16 @@ footer {
 
 .card p {
     color: #cfcfcf;
+}
+
+.project-thumb {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border: 1px solid #222;
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
 }
 
 .tag {
@@ -648,4 +672,596 @@ input[type="submit"] {
 .scroll-arrow-container a:hover .scroll-arrow {
     /* 确保悬停时的缩放也基于旋转 45 度 */
     transform: rotate(45deg) scale(1.1); 
+}
+
+/* =========================================
+   PRO ABOUT PAGE STYLES (Add to style.css)
+   ========================================= */
+
+/* 1. Stats Bar (数据条) */
+.stats-bar {
+    background: #111;
+    border-bottom: 1px solid #222;
+    padding: 2rem 0;
+    margin-top: -5px; /* 连接上方 Hero */
+}
+
+.stats-grid {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #666;
+    margin-top: 5px;
+    display: block;
+}
+
+/* 2. Split Layout & Typography */
+.about-split {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    padding: 4rem 0;
+}
+
+.about-text-content {
+    flex: 1;
+}
+
+.text-gray {
+    color: #bbb;
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+    line-height: 1.8;
+}
+
+.tech-stack-mini {
+    display: flex;
+    gap: 15px;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.tech-stack-mini span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255,255,255,0.05);
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: 0.3s;
+}
+
+.tech-stack-mini span:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* 3. Pro Profile Image (3D Glow Effect) */
+.about-visual {
+    flex: 0 0 320px;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-card-3d {
+    position: relative;
+    width: 280px;
+    height: 350px;
+    background: #1a1a1a;
+    border-radius: 12px;
+    /* 红色发光阴影 */
+    box-shadow: 0 10px 30px -10px rgba(204, 0, 0, 0.3); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: transform 0.4s ease;
+}
+
+.profile-img-pro {
+    width: 80%;
+    height: auto;
+    filter: grayscale(100%); /* 默认黑白 */
+    transition: 0.5s ease;
+}
+
+.profile-card-3d:hover {
+    transform: translateY(-10px) rotate(2deg);
+}
+
+.profile-card-3d:hover .profile-img-pro {
+    filter: grayscale(0%); /* 悬停变彩色 */
+    transform: scale(1.05);
+}
+
+/* 4. Professional Timeline */
+.timeline-pro {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* 垂直中心线 */
+.timeline-pro::before {
+    content: '';
+    position: absolute;
+    left: 100px; /* 线的位置 */
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background: #222;
+}
+
+.timeline-row {
+    display: flex;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.timeline-time {
+    flex: 0 0 100px; /* 固定宽度 */
+    text-align: right;
+    padding-right: 20px;
+    color: #666;
+    font-weight: bold;
+    font-size: 0.9rem;
+    padding-top: 5px;
+}
+
+.timeline-dot-pro {
+    width: 12px;
+    height: 12px;
+    background: var(--background-dark);
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    position: absolute;
+    left: 95px; /* 对齐线的位置 (100px - 5px) */
+    top: 8px;
+    z-index: 2;
+    transition: 0.3s;
+}
+
+.timeline-row:hover .timeline-dot-pro {
+    background: var(--primary-color);
+    box-shadow: 0 0 10px var(--primary-color);
+}
+
+.timeline-content-pro {
+    flex: 1;
+    padding-left: 30px;
+    background: transparent;
+}
+
+.timeline-content-pro h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.3rem;
+    color: #fff;
+}
+
+.timeline-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    color: #888;
+    margin-bottom: 0.8rem;
+}
+
+.timeline-content-pro p {
+    color: #aaa;
+    line-height: 1.6;
+}
+
+/* 响应式适配 */
+@media screen and (max-width: 768px) {
+    .stats-grid { gap: 2rem; }
+    
+    .about-split { 
+        flex-direction: column-reverse; 
+        text-align: center;
+    }
+    
+    .tech-stack-mini {
+        justify-content: center;
+    }
+
+    /* 手机端时间轴调整 */
+    .timeline-pro::before { left: 20px; }
+    .timeline-dot-pro { left: 15px; }
+    .timeline-time { display: none; } /* 隐藏左侧时间，放在内容里 */
+    .timeline-content-pro { padding-left: 40px; }
+    
+    .timeline-content-pro h3::after {
+        content: attr(data-date); /* 可选：通过伪类把时间加回来 */
+    }
+}
+
+/* =========================================
+ * V4 HYBRID THEME (Professional + Interesting)
+ * Add this to the end of your style.css
+ * ========================================= */
+
+/* Global Utilities */
+.bg-darker { background-color: #080808; }
+
+.section-heading {
+    font-size: 1.8rem;
+    margin-bottom: 2.5rem;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+}
+.section-heading::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: var(--primary-color);
+    margin-top: 10px;
+}
+.highlight { color: var(--primary-color); }
+
+/* 1. Pro Hero Section Layout */
+.pro-hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    padding-top: 80px; /* Space for fixed header */
+    position: relative;
+    background: radial-gradient(circle at 80% 20%, rgba(204,0,0,0.05) 0%, transparent 40%);
+    overflow: hidden; 
+}
+
+/* Canvas positioning inside Pro Hero */
+.pro-hero .hero-canvas {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 0;
+}
+
+.pro-hero-content {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* Text Styles */
+.subtitle {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #666;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.pro-hero-text h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.lead-text {
+    font-size: 1.15rem;
+    color: #bbb;
+    margin-bottom: 2.5rem;
+    max-width: 500px;
+    line-height: 1.7;
+}
+
+.pro-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 15px 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 2px solid var(--primary-color);
+    transition: 0.3s;
+}
+.btn-primary:hover { background: transparent; color: var(--primary-color); text-decoration: none;}
+
+.btn-text {
+    color: #fff; text-decoration: none; font-weight: 600; transition: 0.3s; padding: 15px 20px;
+}
+.btn-text:hover { color: black; text-decoration: none; }
+
+
+/* ----------------------------------------------------
+ * HERO IMAGE STYLES (3D EFFECT)
+ * ---------------------------------------------------- */
+.pro-hero-visual {
+    display: flex;
+    justify-content: center;
+    perspective: 1000px; /* 3D Perspective */
+}
+
+.profile-card-3d {
+    position: relative;
+    width: 300px;
+    height: 380px;
+    background: #1a1a1a;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px -5px rgba(204, 0, 0, 0.25); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border: 1px solid #333;
+}
+
+.profile-img-pro {
+    width: 85%;
+    height: auto;
+    filter: grayscale(100%);
+    transition: 0.5s ease;
+    mix-blend-mode: luminosity;
+}
+
+.profile-card-3d:hover {
+    transform: rotateY(-5deg) rotateX(5deg) translateY(-10px);
+    box-shadow: 20px 20px 40px -5px rgba(204, 0, 0, 0.4);
+    border-color: var(--primary-color);
+}
+
+.profile-card-3d:hover .profile-img-pro {
+    filter: grayscale(0%);
+    transform: scale(1.08);
+    mix-blend-mode: normal;
+}
+
+/* Floating Badge */
+.result-badge {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    background: #000;
+    border: 1px solid #333;
+    padding: 10px 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.6);
+    z-index: 10;
+    border-radius: 8px;
+    animation: floatBadge 3s ease-in-out infinite;
+}
+
+@keyframes floatBadge {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.exp-number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    line-height: 1;
+}
+
+.exp-text {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    line-height: 1.2;
+    font-weight: 600;
+    color: #fff;
+    text-align: left;
+}
+
+
+/* ----------------------------------------------------
+ * SECTIONS & GRIDS
+ * ---------------------------------------------------- */
+
+/* Services Grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+.service-card {
+    background: #0f0f0f; padding: 2.5rem; border: 1px solid #222;
+    transition: transform 0.3s, border-color 0.3s;
+}
+.service-card:hover { transform: translateY(-5px); border-color: var(--primary-color); }
+.service-icon { font-size: 2rem; color: var(--primary-color); margin-bottom: 1.5rem; }
+.service-card h3 { font-size: 1.25rem; margin-bottom: 1rem; color: #fff; }
+.service-card p { color: #888; font-size: 0.95rem; line-height: 1.6; }
+
+/* Bento Grid */
+.bento-grid {
+    display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 1.5rem; height: 240px;
+}
+.bento-item {
+    background: #111; border: 1px solid #222; padding: 2rem;
+    display: flex; flex-direction: column; justify-content: center; transition: 0.3s;
+}
+.bento-item:hover { border-color: #444; background: #161616; }
+.bento-item h4 {
+    font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: #666; margin-bottom: 1.5rem;
+}
+.skill-icons { display: flex; gap: 2rem; font-size: 3rem; color: #ddd; }
+.skill-icons i:hover { color: var(--primary-color); transition: 0.3s; }
+.tool-list { list-style: none; color: #bbb; }
+.tool-list li { margin-bottom: 8px; font-size: 0.95rem; }
+.tool-list i { margin-right: 8px; color: var(--primary-color); width: 20px;}
+.soft p { color: #fff; font-size: 1.1rem; line-height: 1.6; font-weight: 500; }
+
+/* Experience List */
+.split-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem; }
+.view-linkedin { color: #fff; text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+.view-linkedin:hover { color: var(--primary-color); }
+
+.job-row { display: flex; border-bottom: 1px solid #222; padding: 2rem 0; transition: 0.3s; }
+.job-row:hover { background: rgba(255,255,255,0.02); padding-left: 1rem; padding-right: 1rem; }
+.job-row:last-child { border-bottom: none; }
+.job-date { flex: 0 0 150px; color: #666; font-size: 0.9rem; font-weight: 600; padding-top: 4px; }
+.job-info { flex: 0 0 250px; }
+.job-info h3 { font-size: 1.1rem; color: #fff; margin-bottom: 4px; }
+.company { color: var(--primary-color); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; }
+.job-desc { flex: 1; color: #aaa; line-height: 1.6; padding-left: 2rem; }
+
+/* Responsive */
+@media screen and (max-width: 992px) {
+    .pro-hero-content { grid-template-columns: 1fr; text-align: center; }
+    .pro-hero-text h1 { font-size: 2.8rem; }
+    .pro-actions { justify-content: center; }
+    .bento-grid { grid-template-columns: 1fr; height: auto; }
+    .pro-hero-visual { margin-top: 3rem; }
+    .job-row { flex-direction: column; gap: 1rem; }
+    .job-desc { padding-left: 0; }
+}
+
+/* --------------------------------------
+ * Hover Hint Indicator (Added)
+ * -------------------------------------- */
+
+/* Ensure the container allows absolute positioning of the arrow */
+.pro-hero-visual {
+    position: relative; 
+}
+
+.hover-hint {
+    position: absolute;
+    /* Position to the right of the image */
+    right: -50px; 
+    top: 50%;
+    transform: translateY(-50%);
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+    z-index: 1;
+    pointer-events: none; /* Allows clicking through it */
+    opacity: 1.0;
+    transition: opacity 0.3s ease;
+}
+
+.hint-text {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #666;
+    font-weight: 800;
+    writing-mode: vertical-rl; /* Optional: Makes text vertical for style */
+    text-orientation: mixed;   /* Or remove these 2 lines for horizontal text */
+    transform: rotate(-90deg); /* Fix vertical text direction */
+}
+
+.hint-arrow {
+    font-size: 2rem;
+    color: var(--primary-color);
+    animation: pointLeft 1.5s infinite ease-in-out;
+}
+
+/* Hide the hint when the user actually hovers over the area */
+.pro-hero-visual:hover .hover-hint {
+    opacity: 0;
+}
+
+/* Arrow Animation */
+@keyframes pointLeft {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-10px); /* Move left towards image */
+    }
+}
+
+/* =========================================
+   SPLIT LAYOUT for Project Pages (图片左, 文字右)
+   ========================================= */
+.split {
+    display: flex;
+    align-items: center; /* 垂直居中对齐内容 */
+    gap: 3rem; /* 图片和文字之间的间隔 */
+    padding: 2rem 0;
+}
+
+.split-left {
+    flex: 1; /* 占据 50% 的宽度 */
+    text-align: center; /* 居中图片 */
+}
+
+.split-right {
+    flex: 1; /* 占据 50% 的宽度 */
+}
+
+
+/* =========================================
+   PROJECT PAGE: Screenshot Gallery Scrolling
+   ========================================= */
+.shots-scroller {
+    overflow-x: auto; /* 核心：启用横向滚动条 */
+    overflow-y: hidden;
+    white-space: nowrap; /* 防止图片换行 */
+    scroll-snap-type: x mandatory; /* 可选：实现滚动时自动对齐到图片起始位置 */
+    -webkit-overflow-scrolling: touch; /* 增强 iOS 上的滚动体验 */
+    padding-bottom: 15px; /* 为滚动条留出空间 */
+}
+
+/* 如果您想隐藏滚动条但保留功能，可以取消注释以下 WebKit 样式 */
+/*
+.shots-scroller::-webkit-scrollbar {
+    display: none;
+}
+.shots-scroller {
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+}
+*/
+
+.shots-track {
+    display: flex; /* 核心：使用 Flexbox 将图片排列在一行 */
+    gap: 16px; /* 图片间的间隔，这与 script.js 中的计算值匹配 */
+}
+
+.shots-item {
+    flex: 0 0 auto; /* 阻止图片项收缩或拉伸 */
+    width: 360px; /* 默认图片项宽度 */
+    scroll-snap-align: start; /* 滚动对齐到项的起始位置 */
+    animation: none; /* 禁用 shots-item 上的 fade-in-up 动画，否则可能干扰滚动初始布局 */
+}
+
+.shots-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* 箭头控制按钮的样式 */
+.shots-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+    gap: 1.5rem;
 }
